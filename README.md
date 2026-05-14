@@ -1,13 +1,20 @@
-<h1>Birthday</h1>
+# Likitha Reddy - Birthday Edition 2026
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?longCache=true&style=plastic)](https://www.python.org/) [![GitHub license](https://img.shields.io/aur/license/yaourt.svg?style=popout-square?longCache=true&style=plastic)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) ![PyPI - Status](https://img.shields.io/pypi/status/Django.svg?style=plastic)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?longCache=true&style=plastic)](https://www.python.org/) 
+[![Release](https://img.shields.io/badge/Release-v1.0.0--First--Release-green.svg)](https://github.com/VENKATAVISHALKOVURU/LR-B)
 
-<p>
-This is a template to wish somebody on their birthday. It contains a scattered gallery, cards with birthday wishes 
-on them, a word cloud made from their chat history generated using <a href="https://github.com/amueller/word_cloud">Word Cloud Generator</a> and an embedded gift card. The recepient's email address is pre-configured and it gets delivered to them when they view it. 
-</p>
-<br>
-<small><strong>Note:</strong> The site works best on Chrome. </small>
+A premium, cinematic digital tribute designed as a professional editorial storytelling experience. This application features a luxury magazine-style appreciation wall, a nostalgic floating Polaroid gallery, and an integrated interactive gift experience.
+
+---
+
+### 🌟 Key Features
+- **Cinematic Storytelling:** Editorial cards highlighting professional strengths and milestones.
+- **Nostalgic Gallery:** A floating 2x3 grid of personal memories with thematic "Mix" captions.
+- **Interactive Gift:** Asynchronous backend integration to trigger a personalized birthday surprise.
+- **Modern UI:** Built with Vanilla CSS, glassmorphism, and premium typography.
+
+> [!IMPORTANT]
+> **First Release Note (v1.0.0):** This version marks the transition from a traditional birthday template to a high-fidelity cinematic experience, finalized on May 15, 2026.
 
 <h2>Demo<h2>
 
