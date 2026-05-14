@@ -3,7 +3,7 @@ services:
     name: birthday-likitha-2026
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn run:app
+    startCommand: python init_db.py && gunicorn run:app
     envVars:
       - key: FLASK_APP
         value: run.py
