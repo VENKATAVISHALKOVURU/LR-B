@@ -16,5 +16,5 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'False') == 'True'
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER')
+    MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER') or 'likithareddyvaka2007@gmail.com'
     TESTING = False

@@ -22,4 +22,5 @@ services:
       - key: MAIL_PASSWORD
         sync: false
       - key: MAIL_RECEIVER
+        value: likithareddyvaka2007@gmail.com
         sync: false
