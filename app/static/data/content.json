@@ -1,0 +1,42 @@
+{
+    "hero": {
+        "title": "HAPPY BIRTHDAY LIKITHA",
+        "description": "Likitha is not just a name; she is a presence that redefined what it meant to lead with grace. From the corridors of her academic journey to the high-stakes 48-hour hackathons, she moved with a quiet intensity that commanded respect without ever raising her voice. As a CTO, she didn't just manage code; she curated innovation, seeing patterns where others saw chaos. But beyond the titles—the public speaker, the leader, the visionary—there is a girl who values trust above all, the silent architect of Team GREENPULSE's togetherness. This experience is a digital museum of that journey, a cinematic tribute to a legacy that is only just beginning."
+    },
+    "milestones": [
+        {
+            "id": "LR",
+            "title": "LR — LEADERSHIP & RESPONSIBILITY",
+            "text": "Your calm leadership and maturity naturally earned people’s respect. You carry responsibility with a grace that inspires everyone around you."
+        },
+        {
+            "id": "CTO",
+            "title": "CTO — INNOVATION & VISION",
+            "text": "A visionary mindset that looks beyond the immediate. Your ability to innovate and see the bigger picture is what sets you apart as a true leader."
+        },
+        {
+            "id": "HACKATHON",
+            "title": "48 HRS HACKATHON — DETERMINATION & FOCUS",
+            "text": "Even under pressure, your focus and determination never faded. The 48-hour grind showed your true character and relentless drive."
+        },
+        {
+            "id": "SPEAKER",
+            "title": "PUBLIC SPEAKER — CLARITY & CONFIDENCE",
+            "text": "Your confidence while speaking always carried clarity and presence. You have a natural ability to command a room and share ideas with impact."
+        },
+        {
+            "id": "CAREER",
+            "title": "CAREER — AMBITION & GROWTH",
+            "text": "Your ambition towards learning and growth continues to inspire everyone around you. You are constantly evolving and reaching for new heights."
+        },
+        {
+            "id": "GREENPULSE",
+            "title": "TEAM GREENPULSE — TRUST & TOGETHERNESS",
+            "text": "The glue that keeps the team together. Your presence fosters trust and a sense of belonging, making every collaboration meaningful."
+        }
+    ],
+    "gift": {
+        "prompt": "Happy 19th Birthday, Likitha! Click below for your final surprise.",
+        "button": "GIFT"
+    }
+}

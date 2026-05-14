@@ -1,0 +1,174 @@
+{% extends "base.html" %} {% block content %}
+
+<a href="{{ url_for('auth.logout') }}" id="logoutLink">LOG OUT</a>
+
+<div class="mainPage" id="fullpage">
+    <div class="first section">
+        <div class="wrap" id="wrap">
+            <div class="photo photo_front" id="{% raw %}photo_{{index}}{% endraw %}" onclick="turn(this)">
+                <div class="photo-wrap">
+                    <div class="side side-front">
+                        <p class="image">
+                            <img id="img" src="{{ url_for('static', filename='photo/') }}{% raw %}{{img}}{% endraw %}">
+                        </p>
+                        <p class="caption">{% raw %}{{caption}}{% endraw %}</p>
+                        
+                    </div>
+                    <div class="side side-back">
+                        <p class="desc">{% raw %}{{desc}}{% endraw %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second section">
+        <div class="editorial-container">
+            <!-- Card 1: Leadership -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero7.jpg') }}" alt="Leadership">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">LR • Leadership</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        Your journey in leadership has always been defined by a rare combination of composure and conviction. It wasn’t just about making decisions; it was about fostering an environment where everyone felt heard, guided by a vision that transcended the immediate task.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Innovation -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero8.jpg') }}" alt="Innovation">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">CTO • Innovation</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        As the technical heart of GREENPULSE, you transformed abstract ideas into functional reality. Your approach to innovation wasn't just about code—it was about architecting solutions with a forward-thinking mindset that pushed the boundaries of what the team could achieve.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Determination -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero9.jpg') }}" alt="Determination">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">48 HRS • Focus</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        The intensity of a 48-hour sprint reveals the true depth of one’s focus. Amidst the caffeine and code, you remained the steady presence, turning sleepless hours into milestones and technical challenges into breakthroughs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third section">
+        <div class="editorial-container">
+            <!-- Card 4: Confidence -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero10.jpg') }}" alt="Confidence">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">Public Speaker</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        Commanding a room requires more than just words; it requires an authentic presence. Whether addressing a small team or a large audience, your ability to articulate vision with such clarity and poise left a lasting impression on everyone who listened.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5: Ambition -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero11.jpg') }}" alt="Ambition">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">Career • Growth</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        Your career is more than a path; it’s a narrative of continuous growth and quiet ambition. You look toward the future not just with dreams, but with a calculated determination to build something meaningful and enduring.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6: Memories -->
+            <div class="editorial-card">
+                <div class="editorial-image">
+                    <img src="{{ url_for('static', filename='photo/hero12.jpg') }}" alt="Memories">
+                </div>
+                <div class="editorial-content">
+                    <h2 class="editorial-title">GREENPULSE • Memories</h2>
+                    <div class="editorial-divider"></div>
+                    <p class="editorial-text">
+                        Beyond the work, there are the moments that define a journey. The shared laughs, the late-night discussions, and the bond of a team moving as one—these are the memories that make the GREENPULSE story truly unforgettable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fourth section">
+        <div id="leftInfo">
+            <div id="quoteContainer">
+                <p id="dynamicQuote">"Leadership is the quiet art of making others better in your presence."</p>
+                <div class="quote-line"></div>
+                <p id="quoteAuthor">— The Soul of Likitha</p>
+            </div>
+        </div>
+        <div id="rightImage">
+            <div class="word-cloud-container">
+                <img src="{{ url_for('static',filename='image/soul.jpeg') }}" alt="Soul Portrait" id="soulPortrait">
+                <div class="word-overlay">
+                    <span class="cloud-word w-lg" style="top: 10%; left: 20%;">LEADERSHIP</span>
+                    <span class="cloud-word w-md" style="top: 25%; left: 60%;">INNOVATION</span>
+                    <span class="cloud-word w-sm" style="top: 15%; left: 75%;">VISION</span>
+                    <span class="cloud-word w-lg" style="top: 45%; left: 10%;">CONSISTENCY</span>
+                    <span class="cloud-word w-md" style="top: 60%; left: 80%;">MATURITY</span>
+                    <span class="cloud-word w-sm" style="top: 5%; left: 50%;">CONFIDENCE</span>
+                    <span class="cloud-word w-lg" style="top: 80%; left: 30%;">KINDNESS</span>
+                    <span class="cloud-word w-md" style="top: 75%; left: 15%;">DETERMINATION</span>
+                    <span class="cloud-word w-sm" style="top: 90%; left: 65%;">FOCUS</span>
+                    <span class="cloud-word w-lg" style="top: 35%; left: 85%;">PATIENCE</span>
+                    <span class="cloud-word w-md" style="top: 12%; left: 5%;">CLARITY</span>
+                    <span class="cloud-word w-sm" style="top: 85%; left: 5%;">PRESENCE</span>
+                    <span class="cloud-word w-lg" style="top: 55%; left: 65%;">PURPOSE</span>
+                    <span class="cloud-word w-md" style="top: 30%; left: 40%;">AMBITION</span>
+                    <span class="cloud-word w-sm" style="top: 70%; left: 45%;">RESILIENCE</span>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="fifth section">
+        <div id="giftTextContainer">
+            <p id="giftText">Happy 19th Birthday, Likitha!<br>Click below for your final surprise.</p>
+            <a href="{{ url_for('main.send_mail') }}" id="giftLink">GIFT</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Background Audio -->
+<audio id="bgAudio" loop>
+    <source src="{{ url_for('static', filename='song/background.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script>
+    // Audio autoplay workaround for browsers
+    document.addEventListener('click', function() {
+        var audio = document.getElementById('bgAudio');
+        if (audio.paused) {
+            audio.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+        }
+    }, { once: true });
+</script>
+
+{% endblock %}

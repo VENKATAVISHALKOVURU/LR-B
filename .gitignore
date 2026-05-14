@@ -1,0 +1,15 @@
+venv/
+.vscode
+__pycache__
+migrations/
+.env
+app.db
+logs/
+scratch/
+*.jpg.jpeg
+*.jpeg
+*.png.jpeg
+.planning/
+.gemini/
+*.pyc
+.DS_Store

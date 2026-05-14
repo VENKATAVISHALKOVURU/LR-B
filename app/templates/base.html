@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Happy Birthday </title>
+    <!-- <link rel="icon" type="image/gif/png" href="{{ url_for('static',filename='image/title.svg') }}"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=Cormorant:wght@400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/screen.css') }}" type="text/css">
+    <!-- Including files for the Fullpage effect -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'brand-pink': '#ff7597',
+              },
+              fontFamily: {
+                serif: ['"Bodoni Moda"', 'serif'],
+                script: ['"Great Vibes"', 'cursive'],
+                bubbly: ['"Fredoka"', 'sans-serif'],
+              },
+            }
+          }
+        }
+      </script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Fredoka:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="{{ url_for('static',filename='js/main.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static',filename='photo/data.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/screen.css') }}" type="text/css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+
+
+</head>
+<body>
+    <!-- Cinematic Loader Overlay -->
+    <div id="loader-overlay" class="bg-[#006051] flex items-center justify-center">
+        <main class="text-center px-4 flex flex-col items-center justify-center">
+            <section>
+                <h1 class="font-script text-white text-[80px] md:text-[140px] leading-tight">
+                    Likitha Reddy
+                </h1>
+                <p class="font-bubbly text-white text-xl md:text-3xl uppercase tracking-wider mt-2">
+                    Birthday Edition 2026
+                </p>
+            </section>
+            <section class="flex justify-center">
+                <div class="w-72 md:w-96 h-[1px] bg-white/20 relative overflow-hidden mt-16">
+                    <div class="absolute top-0 left-0 h-full bg-white" id="progress-fill" style="width: 0%; transition: width 3s ease-in-out;">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Cinematic Film Grain Overlay -->
+    <div id="film-grain" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9998; opacity: 0.05; background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Noise_600x600.png');"></div>
+
+     {% block content %}{% endblock %}
+
+     <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.4; will-change: transform;"></canvas>
+
+     <script>
+        // Cinematic Particle System
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 60; i++) {
+            particles.push(new Particle());
+        }
+
+        let animationFrameId;
+        function animate() {
+            if (document.hidden) {
+                animationFrameId = requestAnimationFrame(animate);
+                return;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            animationFrameId = requestAnimationFrame(animate);
+        }
+        animate();
+
+        window.addEventListener('load', function() {
+            const progressFill = document.getElementById('progress-fill');
+            
+            // Start progress bar
+            setTimeout(() => {
+                if (progressFill) progressFill.style.width = '100%';
+            }, 100);
+
+            // Fade out overlay after 3 seconds
+            setTimeout(() => {
+                const overlay = document.getElementById('loader-overlay');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                    overlay.style.pointerEvents = 'none';
+                    setTimeout(() => overlay.remove(), 1000);
+                }
+                
+                // Autoplay audio if possible
+                const audio = document.getElementById('bgAudio');
+                if (audio) {
+                    audio.play().catch(e => console.log("Autoplay blocked"));
+                }
+            }, 3500);
+        });
+     </script>
+</body>
+</html>

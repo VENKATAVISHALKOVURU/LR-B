@@ -1,0 +1,190 @@
+
+
+
+/* body {
+  width: 100%;
+  height: 100%;
+  
+  color: rgb(214, 87, 13);
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+} */
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  
+  /* top: 50%;
+  margin-top: -300px; */
+  background-color:#006051;
+  overflow: hidden;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+}
+
+.photo {
+  width: 260px;
+  height: 320px;
+  position: absolute;
+  z-index: 1;
+  -webkit-box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  
+  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, left, top;
+  transform: translateZ(0);
+  left: 50%;
+  top: 50%;
+  margin: -160px 0 0 -130px;
+}
+
+.photo .side {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.photo .side-front {
+  padding: 30px 22px 0 22px; /* Increased top and side padding for premium frame */
+  display: flex;
+  flex-direction: column;
+}
+
+.photo .side-front .image {
+  width: 100%;
+  height: 200px; /* Refined height for better proportion within the 320px card */
+  overflow: hidden;
+  position: relative;
+  background: #fdfdfd;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.08); /* Softer inset depth */
+  border-radius: 1px;
+}
+
+.photo .side-front .image img { 
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo .side-front .caption {
+  margin-top: 20px; /* More breathing space for the caption */
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  font-family: "Edu NSW ACT Cursive", cursive; /* Consistent cursive for captions */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo .side-back { }
+
+.photo .side-back .desc {
+  color: #444;
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.4em;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.photo_center {
+  left: 50%;
+  top: 50%;
+  margin: -160px 0 0 -130px;
+  z-index: 999;
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.2), 0 40px 100px rgba(0,0,0,0.4);
+}
+
+.photo-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transform-style: preserve-3d;
+  -moz-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.photo-wrap .side-front {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.photo-wrap .side-back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.photo-wrap .side {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.photo_front .photo-wrap {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.photo_back .photo-wrap {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.nav {
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+  z-index: 999;
+  text-align: center;
+}
+
+.nav .i {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #aaa;
+  text-align: center;
+  border-radius: 90%;
+  -webkit-transform: scale(0.5);
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transform: scale(0.5);
+  -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav .i_current {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+}
+
+.nav .i_back {
+  -webkit-transform: rotateY(-180deg) scale(0.8);
+  -moz-transform: rotateY(-180deg) scale(0.8);
+  background-color: #555;
+}

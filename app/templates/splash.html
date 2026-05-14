@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Likitha Reddy - Birthday Edition 2026</title>
+<!-- Google Fonts: Bodoni Moda for the elegant serif look -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-pink': '#ff7597',
+          },
+          fontFamily: {
+            serif: ['"Bodoni Moda"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            bubbly: ['"Fredoka"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography-adjustments">
+    /* Refined letter spacing for the subtitle to match the cinematic look */
+    .subtitle-spacing {
+      letter-spacing: 0.25em;
+    }
+    
+    /* Ensuring the Bodoni font renders with the right weight and elegance */
+    .hero-text {
+      font-weight: 700;
+      /* Subtle text rendering improvement */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style data-purpose="layout-styles">
+    /* Ensuring the body takes full height for vertical centering */
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* Prevent scrolling on a splash screen */
+    }
+  </style>
+<!-- END: Custom Styles -->
+<style>
+    @keyframes progress-animation {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .animate-progress {
+      animation: progress-animation 3s ease-in-out forwards;
+    }
+  </style><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Fredoka:wght@700&amp;display=swap" rel="stylesheet"/></head>
+<body class="bg-[#006051] flex items-center justify-center min-h-screen transition-colors duration-700">
+<!-- BEGIN: Loading Screen Container -->
+<main class="text-center px-4 flex flex-col items-center justify-center min-h-screen" data-purpose="loading-container">
+<!-- BEGIN: Branding Section -->
+<section class="" data-purpose="branding-text">
+<!-- Main Name -->
+<h1 class="font-script text-white text-[80px] md:text-[140px] leading-tight">
+        Likitha Reddy
+      </h1>
+<!-- Subtitle -->
+<p class="font-bubbly text-white text-xl md:text-3xl uppercase tracking-wider mt-2">
+        Birthday Edition 2026
+      </p>
+</section>
+<!-- END: Branding Section -->
+<!-- BEGIN: Progress Section -->
+<section class="flex justify-center" data-purpose="progress-bar-container">
+<!-- Outer Bar (Background) -->
+<div class="w-72 md:w-96 h-[1px] bg-white/20 relative overflow-hidden mt-16">
+<!-- Inner Bar (Filled Portion) -->
+<div class="absolute top-0 left-0 h-full bg-white animate-progress" data-purpose="progress-fill" id="progress-fill">
+</div>
+</div>
+</section>
+<!-- END: Progress Section -->
+</main>
+<!-- END: Loading Screen Container -->
+<script data-purpose="loading-animation">
+    window.addEventListener('DOMContentLoaded', () => {
+      console.log("Loading screen initialized.");
+      setTimeout(() => {
+        window.location.href = "{{ url_for('main.main_index') }}";
+      }, 3000);
+    });
+  </script>
+</body></html>
