@@ -13,6 +13,7 @@ def index():
 @bp.route('/main')
 @login_required
 def main_index():
+    current_app.logger.info(f"Accessing main_index as user: {current_user.username}")
     return render_template('main/main.html')
 
 @bp.route('/sendMail')
