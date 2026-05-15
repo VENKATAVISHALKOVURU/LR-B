@@ -1,12 +1,16 @@
 from flask_mail import Message
 from flask import render_template, current_app
-from app import mail
 from threading import Thread
 
 def send_async_email(app, msg):
     with app.app_context():
         try:
-            mail.send(msg)
+            # Avoid circular import by fetching mail from app extensions
+            mail = app.extensions.get('mail')
+            if mail:
+                mail.send(msg)
+            else:
+                app.logger.error("Mail extension not found in app")
         except Exception as e:
             app.logger.error(f"Async mail error: {e}")
 
