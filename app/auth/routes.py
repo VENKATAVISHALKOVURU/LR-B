@@ -18,11 +18,16 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('auth.login'))
         
-        from flask import session
         session.permanent = True
         login_user(user, remember=True)
-        current_app.logger.info(f"User {user.username} logged in successfully, redirecting to main")
+        current_app.logger.info(f"User {user.username} logged in successfully, session_permanent={session.permanent}")
         return redirect(url_for('main.main_index'))
+    
+    if form.is_submitted() and not form.validate():
+        current_app.logger.error(f"Form validation failed: {form.errors}")
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(f"Error in {field}: {error}")
     
     if request.method == 'POST':
         current_app.logger.warning(f"Form validation failed. Errors: {form.errors}")
