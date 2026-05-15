@@ -68,8 +68,8 @@
 
 .word-cloud-container {
     position: relative;
-    width: 75vh;
-    height: 75vh;
+    width: 75svh;
+    height: 75svh;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 50px 100px rgba(0,0,0,0.5);
@@ -179,6 +179,7 @@
     letter-spacing: 0.2em;
     text-decoration: none;
     background: rgba(255, 75, 75, 0.2); /* Subtle red for logout */
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px); /* Reduced for performance */
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
@@ -213,37 +214,51 @@
 #giftTextContainer {
     text-align: center;
     z-index: 10;
-    max-width: 90%;
+    max-width: 85%;
+    padding: 20px;
 }
 
-#giftText {
+#giftTitle {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #fff;
-    margin-bottom: 30px;
-    font-weight: 700;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-size: 2.8rem; /* Refined medium-large size */
+    color: #fdfaf5; /* Soft ivory/warm white tone */
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Very subtle soft depth */
+    line-height: 1.2;
+}
+
+#giftSubtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: rgba(253, 250, 245, 0.8); /* Softer opacity */
+    margin-bottom: 45px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 #giftLink {
     display: inline-block;
-    padding: 15px 45px;
+    padding: 14px 42px;
     background: #6358f1;
     color: #fff;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.2em;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     text-transform: uppercase;
     border-radius: 50px;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 30px rgba(99, 88, 241, 0.3);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 10px 30px rgba(99, 88, 241, 0.25);
 }
 
 #giftLink:hover {
-    background: #4f46e5;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(99, 88, 241, 0.5);
+    background: #5145e9;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(99, 88, 241, 0.4);
 }
 
 
@@ -269,7 +284,7 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-    height: 70vh; /* Consistent height */
+    height: 70svh; /* Consistent height */
     max-width: 380px;
 }
 

@@ -1,6 +1,10 @@
 html, body {
-    height:100%;
-    width:100%;
-    margin:0;
-    padding:0;
+    height: 100%;
+    height: 100svh; /* Modern viewport hardening */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
