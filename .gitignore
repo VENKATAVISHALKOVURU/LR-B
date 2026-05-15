@@ -6,9 +6,7 @@ migrations/
 app.db
 logs/
 scratch/
-*.jpg.jpeg
-*.jpeg
-*.png.jpeg
+# Removing accidental image ignores
 .planning/
 .gemini/
 *.pyc
