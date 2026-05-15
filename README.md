@@ -1,9 +1,12 @@
-# Likitha Reddy - Birthday Edition 2026
+# GREENPULSE • Birthday Edition 2026
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?longCache=true&style=plastic)](https://www.python.org/) 
-[![Release](https://img.shields.io/badge/Release-v1.0.0--First--Release-green.svg)](https://github.com/VENKATAVISHALKOVURU/LR-B)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?longCache=true&style=plastic)](https://www.python.org/)
 
-A premium, cinematic digital tribute designed as a professional editorial storytelling experience. This application features a luxury magazine-style appreciation wall, a nostalgic floating Polaroid gallery, and an integrated interactive gift experience.
+<p>
+A premium, cinematic birthday tribute experience designed with luxury editorial aesthetics. This project features a high-fidelity scattered gallery, professional storytelling cards, a dynamic soul-word cloud, and an integrated gift delivery system. 
+</p>
+<br>
+<small><strong>Note:</strong> Optimized for high-performance, cinematic motion across modern browsers. </small>
 
 ---
 

@@ -464,4 +464,18 @@
         height: auto !important;
         padding: 80px 0;
     }
-    .editorial-
+    .editorial-container {
+        flex-direction: column;
+        height: auto;
+        gap: 50px;
+    }
+    .editorial-card {
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+        min-height: 500px;
+    }
+    .editorial-image {
+        height: 250px;
+    }
+}

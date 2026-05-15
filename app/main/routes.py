@@ -15,11 +15,10 @@ def index():
 def main_index():
     return render_template('main/main.html')
 
-from app.services.email_service import send_gift_email
-
 @bp.route('/sendMail')
 @login_required
 def send_mail():
+    from app.services.email_service import send_gift_email
     try:
         receiver = current_app.config['MAIL_RECEIVER']
         if not receiver:

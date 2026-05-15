@@ -9,7 +9,7 @@
                 <div class="photo-wrap">
                     <div class="side side-front">
                         <p class="image">
-                            <img id="img" src="{{ url_for('static', filename='photo/') }}{% raw %}{{img}}{% endraw %}">
+                            <img id="img" src="{{ url_for('static', filename='photo') }}/{% raw %}{{img}}{% endraw %}" loading="lazy" decoding="async">
                         </p>
                         <p class="caption">{% raw %}{{caption}}{% endraw %}</p>
                         
@@ -26,7 +26,7 @@
             <!-- Card 1: Leadership -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero7.jpg') }}" alt="Leadership">
+                    <img src="{{ url_for('static', filename='photo/hero7.jpg') }}" alt="Leadership" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">LR • Leadership</h2>
@@ -40,7 +40,7 @@
             <!-- Card 2: Innovation -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero8.jpg') }}" alt="Innovation">
+                    <img src="{{ url_for('static', filename='photo/hero8.jpg') }}" alt="Innovation" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">CTO • Innovation</h2>
@@ -54,7 +54,7 @@
             <!-- Card 3: Determination -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero9.jpg') }}" alt="Determination">
+                    <img src="{{ url_for('static', filename='photo/hero9.jpg') }}" alt="Determination" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">48 HRS • Focus</h2>
@@ -71,7 +71,7 @@
             <!-- Card 4: Confidence -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero10.jpg') }}" alt="Confidence">
+                    <img src="{{ url_for('static', filename='photo/hero10.jpg') }}" alt="Confidence" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">Public Speaker</h2>
@@ -85,7 +85,7 @@
             <!-- Card 5: Ambition -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero11.jpg') }}" alt="Ambition">
+                    <img src="{{ url_for('static', filename='photo/hero11.jpg') }}" alt="Ambition" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">Career • Growth</h2>
@@ -99,7 +99,7 @@
             <!-- Card 6: Memories -->
             <div class="editorial-card">
                 <div class="editorial-image">
-                    <img src="{{ url_for('static', filename='photo/hero12.jpg') }}" alt="Memories">
+                    <img src="{{ url_for('static', filename='photo/hero12.jpg') }}" alt="Memories" loading="lazy" decoding="async">
                 </div>
                 <div class="editorial-content">
                     <h2 class="editorial-title">GREENPULSE • Memories</h2>
@@ -122,7 +122,7 @@
         </div>
         <div id="rightImage">
             <div class="word-cloud-container">
-                <img src="{{ url_for('static',filename='image/soul.jpeg') }}" alt="Soul Portrait" id="soulPortrait">
+                <img src="{{ url_for('static',filename='image/soul.jpeg') }}" alt="Soul Portrait" id="soulPortrait" loading="lazy" decoding="async">
                 <div class="word-overlay">
                     <span class="cloud-word w-lg" style="top: 10%; left: 20%;">LEADERSHIP</span>
                     <span class="cloud-word w-md" style="top: 25%; left: 60%;">INNOVATION</span>
