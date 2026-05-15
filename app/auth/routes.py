@@ -23,6 +23,10 @@ def login():
         login_user(user, remember=True)
         current_app.logger.info(f"User {user.username} logged in successfully, redirecting to main")
         return redirect(url_for('main.main_index'))
+    
+    if request.method == 'POST':
+        current_app.logger.warning(f"Form validation failed. Errors: {form.errors}")
+        
     return render_template('auth/login.html', title='Sign In', form=form)
 
 @bp.route('/logout')
