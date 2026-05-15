@@ -20,8 +20,8 @@ def init():
             print(f"Created administrative user: {admin_username}")
         
         # 2. Likitha Account
-        likitha_username = 'likitha'
-        likitha_password = 'likitha_birthday_2026' # Safe default or specific as requested
+        likitha_username = 'Likitha'
+        likitha_password = 'Birthday2026' 
         
         likitha_user = User.query.filter_by(username=likitha_username).first()
         if not likitha_user:

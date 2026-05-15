@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request, current_app
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.main import bp
 from app import mail
 from flask_mail import Message
