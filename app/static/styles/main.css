@@ -302,30 +302,15 @@
     background: #f8f8f8;
 }
 
+/* Unified Wall Card Sizing & Cinematic Framing */
 .editorial-image img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Enforce uniform crop ratio */
+    object-position: center center; /* Standardized for all 6 cards */
     transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
 }
-
-/* Specific Cinematic Framing & Balancing */
-/* Wall Section 1 (Second Section) */
-.second.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 20%; } /* Leadership */
-.second.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Innovation */
-.second.section .editorial-card:nth-child(3) .editorial-image img { 
-    object-position: center 25%; 
-    filter: brightness(0.95) saturate(1.05); 
-} /* Determination */
-
-/* Wall Section 2 (Third Section) */
-.third.section .editorial-card:nth-child(1) .editorial-image img { 
-    object-position: center 15%; /* Higher crop to open up framing */
-    filter: brightness(1.02); /* Balancing Public Speaker image */
-}
-.third.section .editorial-card:nth-child(2) .editorial-image img { object-position: center 20%; } /* Career/Growth */
-.third.section .editorial-card:nth-child(3) .editorial-image img { object-position: center center; } /* Memories */
 
 .editorial-card:hover .editorial-image img {
     transform: scale(1.05);
