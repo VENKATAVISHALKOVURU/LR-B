@@ -295,35 +295,38 @@
 
 .editorial-image {
     width: 100%;
-    height: 42%; /* Standardized image area height */
+    height: 32svh; /* Fixed height for perfect horizontal uniformity */
     overflow: hidden;
-    background: #f0f0f0;
+    background: #f8f8f8;
 }
 
 .editorial-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Unified crop ratio */
-    transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    object-fit: cover; /* Enforce uniform crop ratio */
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
 }
 
-/* Specific Cinematic Framing Adjustments */
+/* Specific Cinematic Framing & Balancing */
 /* Wall Section 1 (Second Section) */
-.second.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 25%; } /* Leadership/Car */
-.second.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Innovation/Sunflower */
+.second.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 20%; } /* Leadership */
+.second.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Innovation */
 .second.section .editorial-card:nth-child(3) .editorial-image img { 
-    object-position: center center; 
-    filter: brightness(0.9) saturate(1.1); /* Toning down dominance for visual balance */
-}
+    object-position: center 25%; 
+    filter: brightness(0.95) saturate(1.05); 
+} /* Determination */
 
 /* Wall Section 2 (Third Section) */
-.third.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 30%; } /* Public Speaker */
-.third.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Growth */
-.third.section .editorial-card:nth-child(3) .editorial-image img { object-position: center 20%; } /* Memories */
+.third.section .editorial-card:nth-child(1) .editorial-image img { 
+    object-position: center 15%; /* Higher crop to open up framing */
+    filter: brightness(1.02); /* Balancing Public Speaker image */
+}
+.third.section .editorial-card:nth-child(2) .editorial-image img { object-position: center 20%; } /* Career/Growth */
+.third.section .editorial-card:nth-child(3) .editorial-image img { object-position: center center; } /* Memories */
 
 .editorial-card:hover .editorial-image img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .editorial-content {
