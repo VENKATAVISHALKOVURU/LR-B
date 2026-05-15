@@ -195,85 +195,66 @@
     box-shadow: 0 15px 40px rgba(255, 75, 75, 0.2);
 }
 
-/* Final Gift Section Styles */
-.fifth.section {
-    background: radial-gradient(circle at center, #00806c 0%, #006051 100%);
+
+/* Section 5 - Original Atmospheric Styling */
+.fifth {
+    background-image: url(../image/main5.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
+
+
 #giftTextContainer {
-    max-width: 800px;
-    padding: 60px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px); /* Reduced for performance */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 40px;
-    will-change: transform, opacity;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1.2s ease-out;
+    text-align: center;
+    z-index: 10;
+    max-width: 90%;
 }
 
 #giftText {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #fff;
-    line-height: 1.4;
-    margin-bottom: 40px;
-    font-weight: 600;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 #giftLink {
     display: inline-block;
-    padding: 20px 60px;
-    background: #fff;
-    color: #006051;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
+    padding: 15px 45px;
+    background: #6358f1;
+    color: #fff;
     text-decoration: none;
-    border-radius: 100px;
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(99, 88, 241, 0.3);
 }
 
 #giftLink:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: #f0f0f0;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+    background: #4f46e5;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(99, 88, 241, 0.5);
 }
 
-#giftLink::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(45deg);
-    transition: all 0.5s;
-    opacity: 0;
-}
 
-#giftLink:hover::after {
-    left: 100%;
-    opacity: 1;
-}
-/* Premium Editorial Design System */
+/* Premium Editorial Design System (Sections 2 & 3) */
 .editorial-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     width: 90%;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     height: 100%;
 }
@@ -281,70 +262,86 @@
 .editorial-card {
     flex: 1;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 24px;
+    border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
     will-change: transform;
     display: flex;
     flex-direction: column;
-    height: 65vh;
+    height: 70vh; /* Consistent height */
     max-width: 380px;
 }
 
 .editorial-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+    transform: translateY(-15px);
+    box-shadow: 0 45px 90px rgba(0, 0, 0, 0.2);
 }
 
 .editorial-image {
     width: 100%;
-    height: 45%;
+    height: 42%; /* Standardized image area height */
     overflow: hidden;
+    background: #f0f0f0;
 }
 
 .editorial-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 1.2s ease;
+    object-fit: cover; /* Unified crop ratio */
+    transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
 }
+
+/* Specific Cinematic Framing Adjustments */
+/* Wall Section 1 (Second Section) */
+.second.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 25%; } /* Leadership/Car */
+.second.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Innovation/Sunflower */
+.second.section .editorial-card:nth-child(3) .editorial-image img { 
+    object-position: center center; 
+    filter: brightness(0.9) saturate(1.1); /* Toning down dominance for visual balance */
+}
+
+/* Wall Section 2 (Third Section) */
+.third.section .editorial-card:nth-child(1) .editorial-image img { object-position: center 30%; } /* Public Speaker */
+.third.section .editorial-card:nth-child(2) .editorial-image img { object-position: center center; } /* Growth */
+.third.section .editorial-card:nth-child(3) .editorial-image img { object-position: center 20%; } /* Memories */
 
 .editorial-card:hover .editorial-image img {
     transform: scale(1.08);
 }
 
 .editorial-content {
-    padding: 35px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background: #fff;
 }
 
 .editorial-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: #1a1a1a;
-    margin: 0 0 18px 0;
+    margin: 0 0 15px 0;
     letter-spacing: -0.01em;
     line-height: 1.2;
 }
 
 .editorial-divider {
-    width: 40px;
-    height: 2px;
+    width: 45px;
+    height: 3px;
     background: #006051;
-    margin-bottom: 22px;
-    opacity: 0.6;
+    margin-bottom: 25px;
+    opacity: 0.8;
 }
 
 .editorial-text {
     font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #4a4a4a;
+    color: #444;
     margin: 0;
     text-align: left;
     font-weight: 400;
@@ -445,37 +442,6 @@
 }
 
 
-/* Responsive Editorial Design */
-@media screen and (max-width: 1100px) {
-    .editorial-container {
-        gap: 20px;
-        width: 95%;
-    }
-    .editorial-title {
-        font-size: 1.3rem;
-    }
-    .editorial-text {
-        font-size: 0.95rem;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .second, .third {
-        height: auto !important;
-        padding: 80px 0;
-    }
-    .editorial-container {
-        flex-direction: column;
-        height: auto;
-        gap: 50px;
-    }
-    .editorial-card {
-        width: 90%;
-        max-width: 450px;
-        height: auto;
-        min-height: 500px;
-    }
-    .editorial-image {
-        height: 250px;
-    }
-}
+/* End of main.css */
+

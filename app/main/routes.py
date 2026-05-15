@@ -10,11 +10,22 @@ from config import Config
 def index():
     return render_template('main/index.html')
 
+@bp.route('/health')
+def health():
+    return "Application is Healthy", 200
+
 @bp.route('/main')
 @login_required
 def main_index():
-    current_app.logger.info(f"Accessing main_index as user: {current_user.username}")
-    return render_template('main/main.html')
+    try:
+        # Safer logging to prevent AnonymousUser crashes or missing attribute errors
+        username = getattr(current_user, 'username', 'Unknown')
+        current_app.logger.info(f"Accessing main_index as user: {username}")
+        return render_template('main/main.html')
+    except Exception as e:
+        import traceback
+        current_app.logger.error(f"MAIN INDEX RENDER ERROR: {str(e)}\n{traceback.format_exc()}")
+        raise e
 
 @bp.route('/sendMail')
 @login_required

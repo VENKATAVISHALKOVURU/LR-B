@@ -202,6 +202,7 @@ function addPhotos() {
   sort(random([0, data.length]));
 }
 
+
 function turn(elem) {
   var cls = elem.className;
   var n = elem.id.split("_")[1];
@@ -219,5 +220,28 @@ function turn(elem) {
   }
   return true;
 }
+
+// Robust Image Loader: Supports both .jpg and .jpeg
+function handleImageError(img) {
+    const src = img.src;
+    if (src.includes('.jpg.jpeg')) {
+        // Try fallback to just .jpg
+        img.src = src.replace('.jpg.jpeg', '.jpg');
+    } else if (src.endsWith('.jpg')) {
+        // Try fallback to .jpeg or .jpg.jpeg
+        img.src = src.replace('.jpg', '.jpeg');
+        // If that also fails, it will trigger another error, so we should be careful
+        img.onerror = function() {
+            if (this.src.endsWith('.jpeg')) {
+                this.src = this.src.replace('.jpeg', '.jpg.jpeg');
+                this.onerror = null; // Stop infinite loop
+            }
+        };
+    } else if (src.endsWith('.jpeg')) {
+        img.src = src.replace('.jpeg', '.jpg');
+        img.onerror = null;
+    }
+}
+
 
 
