@@ -20,7 +20,7 @@ def login():
         
         from flask import session
         session.permanent = True
-        login_user(user)
+        login_user(user, remember=True)
         current_app.logger.info(f"User {user.username} logged in successfully, redirecting to main")
         return redirect(url_for('main.main_index'))
     return render_template('auth/login.html', title='Sign In', form=form)
