@@ -41,6 +41,3 @@ def send_mail():
     except Exception as e:
         current_app.logger.error(f"Route mail error: {e}")
         return ({'status': 'error', 'message': str(e)}, 500)
-@bp.route('/invite')
-def invite():
-    return render_template('main/invite.html')
