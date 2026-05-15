@@ -60,6 +60,26 @@ def create_app(config_class=Config):
         app.logger.setLevel(logging.DEBUG if app.debug else logging.INFO)
         app.logger.info('Birthday Tribute application startup')
 
+    # Auto-initialize database tables and admin user for Render/Production resilience
+    with app.app_context():
+        try:
+            db.create_all()
+            from app.models import User
+            if not User.query.filter_by(username='admin').first():
+                admin = User(username='admin')
+                admin.set_password(os.environ.get('ADMIN_PASSWORD', 'Birthday2026'))
+                db.session.add(admin)
+                
+            if not User.query.filter_by(username='Likitha').first():
+                likitha = User(username='Likitha')
+                likitha.set_password('Birthday2026')
+                db.session.add(likitha)
+                
+            db.session.commit()
+            app.logger.info("Database auto-initialization successful.")
+        except Exception as e:
+            app.logger.error(f"Database auto-initialization failed: {e}")
+
     return app
 
 from app import models
