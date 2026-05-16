@@ -32,7 +32,9 @@ def main_index():
 def send_mail():
     from app.services.email_service import send_gift_email
     try:
+        username = getattr(current_user, 'username', 'Unknown')
         receiver = current_app.config['MAIL_RECEIVER']
+        current_app.logger.info(f"Email trigger initiated by {username} for receiver: {receiver}")
         if not receiver:
             return ({'error': 'Mail receiver not configured'}, 500)
             

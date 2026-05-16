@@ -180,12 +180,14 @@
     text-decoration: none;
     background: rgba(255, 75, 75, 0.2); /* Subtle red for logout */
     -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px); /* Reduced for performance */
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     will-change: transform, opacity;
+    -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 9999;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -253,13 +255,17 @@
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 50px;
+    -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-box-shadow: 0 10px 30px rgba(99, 88, 241, 0.25);
     box-shadow: 0 10px 30px rgba(99, 88, 241, 0.25);
 }
 
 #giftLink:hover {
     background: #5145e9;
+    -webkit-transform: translateY(-4px) scale(1.02);
     transform: translateY(-4px) scale(1.02);
+    -webkit-box-shadow: 0 15px 40px rgba(99, 88, 241, 0.4);
     box-shadow: 0 15px 40px rgba(99, 88, 241, 0.4);
 }
 
@@ -276,6 +282,13 @@
     height: 100%;
 }
 
+.second, .third {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px; /* Spacing between wall rows */
+    padding: 0 5%;
+}
+
 .editorial-card {
     flex: 1;
     background: rgba(255, 255, 255, 0.95);
@@ -286,7 +299,7 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-    height: 70svh; /* Consistent height */
+    height: 820px; /* Absolute uniformity across all 6 cards */
     max-width: 380px;
 }
 
@@ -297,31 +310,43 @@
 
 .editorial-image {
     width: 100%;
-    height: 32svh; /* Fixed height for perfect horizontal uniformity */
+    height: 420px; /* Dominant image area */
     overflow: hidden;
-    background: #f8f8f8;
+    background: #f1f1f1;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 /* Unified Wall Card Sizing & Cinematic Framing */
 .editorial-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Enforce uniform crop ratio */
-    object-position: center center; /* Standardized for all 6 cards */
+    object-fit: cover;
+    object-position: center 0%; 
+    transform: scale(0.92); 
     transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
 }
 
+/* Surgical Face Centering Overrides */
+.second .editorial-card:nth-child(1) img { object-position: center 0%; }
+.second .editorial-card:nth-child(2) img { object-position: center 5%; }
+.second .editorial-card:nth-child(3) img { object-position: center 0%; }
+
+.third .editorial-card:nth-child(1) img { object-position: center 0%; }
+.third .editorial-card:nth-child(2) img { object-position: center 10%; }
+.third .editorial-card:nth-child(3) img { object-position: center 5%; }
+
 .editorial-card:hover .editorial-image img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .editorial-content {
-    padding: 40px;
     display: flex;
     flex-direction: column;
+    padding: 30px 34px 40px 34px;
     flex-grow: 1;
     background: #fff;
+    justify-content: flex-start;
 }
 
 .editorial-title {
@@ -329,7 +354,10 @@
     font-size: 1.6rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin: 0 0 15px 0;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0;
     letter-spacing: -0.01em;
     line-height: 1.2;
 }
@@ -338,14 +366,15 @@
     width: 45px;
     height: 3px;
     background: #006051;
-    margin-bottom: 25px;
+    margin-top: 10px; /* Tightened relationship between title and narrative */
+    margin-bottom: 20px;
     opacity: 0.8;
 }
 
 .editorial-text {
     font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.72;
     color: #444;
     margin: 0;
     text-align: left;

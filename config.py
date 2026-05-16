@@ -30,7 +30,11 @@ class Config(object):
     MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'False').lower() == 'true'
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER') or 'likithreddyvaka2007@mail.com'
+    MAIL_RECEIVER = os.environ.get('MAIL_RECEIVER') or 'likithareddyvaka2007@gmail.com'
+    
+    # Safe Mode Configuration
+    SAFE_MODE_EMAIL = os.environ.get('SAFE_MODE_EMAIL', 'True').lower() == 'true'
+    DEV_TEST_EMAIL = os.environ.get('DEV_TEST_EMAIL') or MAIL_USERNAME or 'developer@example.com'
     
     # Application State
     RENDER = os.environ.get('RENDER', 'False').lower() == 'true'
