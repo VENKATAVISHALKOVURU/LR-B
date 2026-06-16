@@ -1,4 +1,4 @@
-# GREENPULSE • Birthday Edition 2026
+# LIKITHA• Birthday Edition 2026
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?longCache=true&style=plastic)](https://www.python.org/)
 
